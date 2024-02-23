@@ -1,0 +1,36 @@
+{
+  "name": "backend-sobreventas",
+  "version": "1.0.0",
+  "description": "Calculo Sobreventas",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js ",
+    "start": "node index.js",
+    "clean": "rm -rf dist/",
+    "build": "npm run clean && mkdir dist && babel src/ -s -d dist",
+    "production": "npm run build && node dist/",
+    "db:import": "node ./src/seed/seeder.js -i",
+    "db:delete": "node ./src/seed/seeder.js -d"
+  },
+  "author": "BRYAN GALLO",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "exceljs": "^4.4.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.6.1",
+    "sequelize": "^6.33.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/node": "^7.23.9",
+    "@babel/plugin-transform-runtime": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "nodemon": "^3.0.1"
+  }
+}
